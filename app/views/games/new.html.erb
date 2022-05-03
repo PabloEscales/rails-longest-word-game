@@ -1,0 +1,20 @@
+<h1 class='p-5'>New game</h1>
+
+<%= link_to "", new_path, class:'p-5' %>
+<div class="container">
+    <ul class="list-group list-group-horizontal">
+      <% @letters.each do |letter| %>
+        <li class="list-group-item"><%= letter %></li>
+      <% end %>
+    </ul>
+  <div class="container">
+  <h2>What is the ...</h2>
+    <form action="/score" method="post">
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+      <div class="input-group mb-3">
+        <input class="form-control" type="text" name="ask" placeholder= "ask somethig" aria-describedby="submit-addon2">
+        <input class="btn btn-primary" type="submit" value= "Play" id="button-addon2">
+      </div>
+    </form>
+  </div>
+</div>
